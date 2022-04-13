@@ -25,7 +25,11 @@
 	
 <script type="text/javascript">
 	document.getElementById('btn1').onclick = function(){
-		alert('Hello Jennie!');
+		var sid = document.getElementById('id').value;
+		var spw = document.getElementById('pw').value;
+		
+		var str = 'Hello Jennie!\n아이디 : ' + sid + '\n비밀번호 : ' + spw;
+		alert(str);
 	};
 </script>
 </body>
