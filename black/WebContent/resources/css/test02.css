@@ -84,7 +84,25 @@ a:active {
 	color: #3f51b5;
 }
 
+[href="test01.html"]:hover {
+	display: block;
+	background-color: #e91e63;
+	color: #3f51b5;
+}
 
+#inTxt {
+	display: block;
+	height: 20px;
+	margin-top: 30px;
+	text-align: center;
+	font-size: 16pt;
+}
+#inTxt:focus {
+	outline: none;
+	background-color: yellow;
+	border: 10px dotted #e91e63;
+	font-weight: bold;
+}
 
 
 
