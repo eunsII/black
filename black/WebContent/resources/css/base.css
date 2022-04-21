@@ -8,6 +8,17 @@
 	display: inline-block;
 	width: 650px;
 }
+/* 너비 */
+.p50 {
+	width: 50%;
+}
+.mx650 {
+	max-width: 650px;
+}
+.mn600 {
+	min-width: 600px;
+}
+
 /* 칼라 */
 .blue {
 	background-color: #2196F3;
