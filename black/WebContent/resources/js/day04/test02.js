@@ -15,7 +15,15 @@ console.log('result2 : ' + result2);
 
 // 리셋버튼 클릭이벤트
 document.getElementById('rbtn').onclick = function(){
-	document.getElementById('tid').value = '';
+//	document.getElementById('tid').value = '';
+	var sid = document.getElementById('tid').value;
+	if(sid){
+		// 변수에 데이터가 채워져 있는 경우(null 또는 undefined 가 아닌 상태)
+		document.getElementById('tpw').focus();
+	} else {
+		// sid에 데이터가 채워져 있지 않은 경우(null 또는 undefined 인 경우)
+		document.getElementById('tid').focus();
+	}
 };
 
 // 아이디를 입력받아서 아이디가 영문자 4글자이상 8글자 이내이면 
@@ -73,7 +81,11 @@ document.getElementById('lbtn').onclick = function(){
 //		location.href = 'test.html?id=' + sid + '&pw=' + spw; // GET 방식 전송
 
 		// 데이터전송용 form 태그의 input 태그에 읽은 데이터를 입력해서 전송하세요.
-		
+		// 1. 아이디가 id, pw 인 태그에 전송데이터를 채워넣는다.
+		document.getElementById('id').value = sid;
+		document.getElementById('pw').value = spw;
+		// 2. 폼 태그를 전송한다.
+		document.getElementById('frm').submit();
 	} else {
 		// 3-2. 통과 못한 경우
 		document.getElementById('tid').value = '';
