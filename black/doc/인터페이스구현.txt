@@ -55,5 +55,6 @@
 -- 위 내용에 적합한 프로그램을 제작해서
 	GitJDBC, MemberVO, MemberSQL, MemberDao, MemberInfo 
 	클래스를 작성해서 제출하세요.
+	실행 콘솔 화면도 캡쳐해서 jpg 파일로 제출하세요.
 	
 	
