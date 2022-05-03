@@ -31,6 +31,14 @@
 					
 					// 클릭에벤트 추가
 					$('#' + data.bno).click(function(){
+						$('#mbno').html(data.bno);
+						$('#mid').html(data.id);
+						$('#avtimg').attr('src', '/black/resources/img/avatar/'+ data.savename);
+						$('#mdate').html(data.wdate);
+						$('#mtitle').html(data.title);
+						$('#mbody').html(data.body.replace(/\r\n/g, '<br>'));
+						
+						// 데이터가 채워졌으면 모달창을 보이게 한다.
 						$('#detail').css('display', 'block');
 					});
 				});
@@ -68,7 +76,7 @@
 	      			<img class="avtimg" src="/black/resources/img/avatar/img_avatar4.png" id="avtimg">
 	      		</div>
 	      	</div>
-	      	<div class="w3-rest">
+	      	<div class="w3-rest" style="position: relative; top: 15px;">
 	      		<h5>글번호 : <span id="mbno"></span></h5>
 	      		<h5>작성자 : <span id="mid"></span></h5>
 	      		<h5>작성일 : <span id="mdate"></span></h5>
@@ -76,9 +84,9 @@
 	      	<hr class="leftclear">
 	        <div class="w3-col w3-margin-bottom">
 	        	<h4 class="w3-col m2">글제목 : </h4>
-	        	<h4 class="w3-col m10">여기는 제목이 들어가는 부분...</h4>
+	        	<h4 class="w3-col m10" id="mtitle">여기는 제목이 들어가는 부분...</h4>
 	        	<div class="w3-col m2"><p></p></div>
-	        	<p class="w3-col m9 w3-round-large w3-border w3-padding">여기는 <br>본문이<br> 들어가는<br> 부분...</p>
+	        	<p class="w3-col m9 w3-round-large w3-border w3-padding" id="mbody">여기는 <br>본문이<br> 들어가는<br> 부분...</p>
 	        </div>
 	      </div>
 	      <footer class="w3-content w3-margin-top">
