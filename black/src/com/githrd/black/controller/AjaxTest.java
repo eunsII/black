@@ -6,6 +6,8 @@ import java.util.*;
 import javax.servlet.annotation.*;
 import javax.servlet.http.*;
 
+import com.githrd.black.dao.MemberDao;
+
 @WebServlet("/idCheck.pink")
 public class AjaxTest extends HttpServlet {
 	public void service(HttpServletRequest req, HttpServletResponse resp) {
@@ -15,6 +17,7 @@ public class AjaxTest extends HttpServlet {
 		// 클라이언트가 요청할 때 전달 받은 데이터로 ArrayList에 채워놓은 데이터와
 		// 비교해서 응답해주는 것으로 대신한다.
 		
+		/*
 		// 리스트데이터 준비
 		ArrayList<String> list = new ArrayList<String>();
 		list.add("jennie");
@@ -22,13 +25,16 @@ public class AjaxTest extends HttpServlet {
 		list.add("rose");
 		list.add("jisoo");
 		list.add("euns");
+		 */
 		
 		// 할일
 		// 1. 전달받은 데이터를 꺼낸다.
 		String sid = req.getParameter("id");
 		System.out.println("sid : " + sid);
 		// 2. 전달받은 아이디가 위의 리스트에 있는지 확인한다.
-		boolean bool = list.contains(sid);
+//		boolean bool = list.contains(sid);
+		MemberDao mDao = new MemberDao();
+		int cnt = mDao.getIdCnt(sid);
 		// 3. 결과에 따라서 결과를 클라이언트에게 전달한다.
 		// 		결과는 JSON 타입으로 전달한다.
 		// 따라서 이 함수가 만들어줘야 하는 문서는 
@@ -39,7 +45,7 @@ public class AjaxTest extends HttpServlet {
 		try {
 			pw = resp.getWriter();
 			pw.println("{");
-			if(bool) {
+			if(cnt != 0) {
 				pw.println("\"result\": \"NO\"");
 			} else {
 				pw.println("\"result\": \"OK\"");
